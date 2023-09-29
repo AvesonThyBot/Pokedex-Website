@@ -1,0 +1,64 @@
+/* Body */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Banner */
+.banner{
+    background-color: #17b5ff;
+    border: 5px solid black;
+    border-radius: 10px;
+    text-align: center;
+    margin: 10px 30px;
+}
+
+/* Logo */
+.logo{
+    width: 45%;
+    padding: 30px 25em;
+}
+
+/* Input group (search) */
+
+.input-group{
+    display: flex;   
+    padding: 10px 40px; 
+}
+
+/* Font sizing */
+.input-group label,.input-group input[type=text], .input-group input[type=button]{
+    font-size: 1.2em;
+}
+
+/* Label */
+.input-group label{
+    background-color: #17b5ff;
+    padding: 10px;
+    border-radius: 10px 0 0 10px;
+    border: 1px solid black;
+
+}
+
+
+/* Search bar */
+.input-group input[type=text]{
+    flex: 1 1;
+    border: 1px solid black;
+}
+
+/* Search button & hover*/
+.input-group input[type=button]{
+    background-color: #17b5ff;
+    padding: 0 40px;
+    border-radius: 0 10px 10px 0;
+    border: 1px solid black;
+}
+
+.input-group input[type=button]:hover{
+    background-color: #00aeff;
+    transition: .3s ease;
+    color: white;
+}
