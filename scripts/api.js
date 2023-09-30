@@ -96,7 +96,7 @@ function searchPokemon() {
       stats.innerHTML += `<hr class="hr">`;
       for (let index = 0; index < data.stats.length; index++) {
         // Makes a progress bar with stats
-        let name = filterText(data.stats[index].stat.name);
+        let name = data.stats[index].stat.name.toUpperCase();
         let percentage = (data.stats[index].base_stat / 450) * 100;
         // change stats progressbar colour
         // change stats progressbar colour
@@ -118,7 +118,9 @@ function searchPokemon() {
         }
 
         // output the stats
-        stats.innerHTML += `<div class="stats-name">${name}</div><div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 20px">
+        stats.innerHTML += `<div class="stats-name">${filterText(
+          name
+        )}</div><div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 20px">
           <div class="progress-bar ${extraClass} progress-text progress-bar-striped progress-bar-animated" style="width: ${percentage}%">${data.stats[index].base_stat}</div>
         </div>`;
         search.placeholder = `${filterText(data.name)}`;
