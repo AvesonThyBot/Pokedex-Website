@@ -184,6 +184,9 @@ body::-webkit-scrollbar-thumb {
   background-color: #0075be;
   margin: 0 5px;
 }
+#ability-row span {
+  padding: 10px 5px;
+}
 /* --------------- Stats ---------------*/
 
 /* Stats title */

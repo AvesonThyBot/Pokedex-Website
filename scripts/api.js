@@ -78,11 +78,17 @@ function searchPokemon() {
         types.innerHTML += `<span class="${data.types[index].type.name} type">${filterText(data.types[index].type.name)}</span>`;
       }
 
-      // ---------------------- Abilties row ----------------------
+      // ---------------------- Abilties & handHeld row ----------------------
       const ability = document.querySelector("#ability");
       ability.innerHTML = `<strong>Ability: </strong>`;
       for (let index = 0; index < data.abilities.length; index++) {
         ability.innerHTML += `<div class="ability-list ${data.abilities[index].ability.name}">${filterText(data.abilities[index].ability.name)}</div>`;
+      }
+
+      const handHeld = document.querySelector("#hand-held");
+      handHeld.innerHTML = `<strong>Held Items: </strong>`;
+      for (let index = 0; index < data.held_items.length; index++) {
+        handHeld.innerHTML += `<div class="ability-list ${data.held_items[index].item.name}">${filterText(data.held_items[index].item.name)}</div>`;
       }
 
       // ---------------------- Stats row ----------------------
