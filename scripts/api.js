@@ -42,15 +42,14 @@ function searchPokemon() {
       return response.json();
     })
     .then((data) => {
+      // Function to reset elements that don't reset
+      resetElements();
+
       // Remove hidden-ui class
       const unhideContainer = document.querySelector(".container");
-
-      // Iterate through each hidden div and remove the class
       unhideContainer.querySelectorAll(".hidden-ui").forEach((hiddenDiv) => {
         hiddenDiv.classList.remove("hidden-ui");
       });
-
-      // Function to clear everything
 
       // Pokemon image
 
@@ -120,6 +119,7 @@ function searchPokemon() {
       const stats = document.querySelector("#stats");
 
       // stats title
+      stats.innerHTML += `<p id="stats-title"></p>`;
       const statsTitle = document.querySelector("#stats-title");
       statsTitle.textContent = `${filterText(data.name)}'s Statistics:`;
       stats.innerHTML += `<hr class="hr">`;
@@ -190,6 +190,16 @@ function movesModal(numberOfMoves, data, pokemon) {
       modalBody.innerHTML += `<div class="move-list ${data.moves[index].move.name}">${filterText(data.moves[index].move.name)}</div>`;
     }
   }
+}
+
+// Clears elemnts that don't change
+function resetElements() {
+  // reset type div
+  const type = document.querySelector("#type-box");
+  type.innerHTML = "";
+  // reset stats progress bar
+  const stats = document.querySelector("#stats");
+  stats.innerHTML = "";
 }
 
 // Filter text (only use for word without letters)
