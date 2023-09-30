@@ -7,14 +7,17 @@ body {
   margin: 0;
   padding: 0;
   color: #fff;
+  position: relative;
 }
 
 /* Scrollbar */
 body::-webkit-scrollbar {
-  width: 0.01em;
+  width: 0.5em;
 }
 body::-webkit-scrollbar-thumb {
-  background-color: transparent;
+  background-color: #ffcc00;
+  border: 1px outset black;
+  border-radius: 5px;
 }
 
 /* --------------- Banner & Logo ---------------*/
@@ -25,8 +28,11 @@ body::-webkit-scrollbar-thumb {
   border: 5px solid #ffcc00;
   border-radius: 10px;
   text-align: center;
-  margin: 10px 30px 0 30px;
+  margin: 20px 30px 0 30px;
   user-select: none;
+  -webkit-box-shadow: 13px 11px 5px -4px rgba(0, 0, 0, 0.32);
+  -moz-box-shadow: 13px 11px 5px -4px rgba(0, 0, 0, 0.32);
+  box-shadow: 13px 11px 5px -4px rgba(0, 0, 0, 0.32);
 }
 
 /* Logo */
@@ -57,6 +63,9 @@ body::-webkit-scrollbar-thumb {
 .input-group input[type="text"],
 .input-group input[type="button"] {
   font-size: 1.2em;
+  -webkit-box-shadow: 13px 11px 5px -4px rgba(0, 0, 0, 0.32);
+  -moz-box-shadow: 13px 11px 5px -4px rgba(0, 0, 0, 0.32);
+  box-shadow: 13px 11px 5px -4px rgba(0, 0, 0, 0.32);
 }
 
 /* Label */
@@ -118,6 +127,16 @@ body::-webkit-scrollbar-thumb {
   border-top: 2px outset black;
 }
 
+/* --------------- Moves Modal ---------------*/
+.modal-body::-webkit-scrollbar {
+  width: 0.5em;
+}
+.modal-body::-webkit-scrollbar-thumb {
+  background-color: #ffcc00;
+  border: 1px outset black;
+  border-radius: 5px;
+}
+
 /* --------------- Main components ---------------*/
 
 /* Container */
@@ -142,9 +161,27 @@ body::-webkit-scrollbar-thumb {
   margin: 30px 10px;
   border: 3px outset #000;
   border-radius: 10px;
+  -webkit-box-shadow: 13px 11px 5px -4px #ffcc00;
+  -moz-box-shadow: 13px 11px 5px -4px #ffcc00;
+  box-shadow: 13px 11px 5px -4px #ffcc00;
 }
 
 /* --------------- Pokemon Details ---------------*/
+
+#top-row span {
+  user-select: none;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
+#type-box,
+.ability-list,
+.item-list,
+.move-list {
+  user-select: none;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
 
 #pokemon-details {
   display: flex;
@@ -157,14 +194,17 @@ body::-webkit-scrollbar-thumb {
 /* pokemon image container */
 .pokemon-image {
   position: absolute;
-  right: -50px;
-  top: -10px;
+  right: -80px;
+  top: -15px;
   padding: 0;
-  width: 150px;
+  width: 180px;
   z-index: 1;
   border-radius: 50%;
   border: 5px outset black;
   background-color: white;
+  -webkit-box-shadow: 13px 11px 5px -4px #ffcc00;
+  -moz-box-shadow: 13px 11px 5px -4px #ffcc00;
+  box-shadow: 13px 11px 5px -4px #ffcc00;
 }
 
 /* Pokemon image */
