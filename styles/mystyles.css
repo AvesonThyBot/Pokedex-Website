@@ -167,8 +167,8 @@ body::-webkit-scrollbar-thumb {
 .type {
   border: 2px solid black;
   border-radius: 6px;
-  padding: 3px;
-  color: #fff;
+  padding: 4px;
+  color: #000;
   display: inline-flex;
   margin: 0 5px;
 }
