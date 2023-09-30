@@ -42,7 +42,17 @@ function searchPokemon() {
       return response.json();
     })
     .then((data) => {
-      // Rest of your code for processing valid Pokemon data
+      // Remove hidden-ui class
+      const unhideContainer = document.querySelector(".container");
+
+      // Iterate through each hidden div and remove the class
+      unhideContainer.querySelectorAll(".hidden-ui").forEach((hiddenDiv) => {
+        hiddenDiv.classList.remove("hidden-ui");
+      });
+
+      // Function to clear everything
+
+      // Pokemon image
 
       // ---------------------- Pokemon details ----------------------
 

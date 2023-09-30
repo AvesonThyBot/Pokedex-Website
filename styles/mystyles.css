@@ -165,6 +165,7 @@ body::-webkit-scrollbar-thumb {
   -webkit-box-shadow: 13px 11px 5px -4px #ffcc00;
   -moz-box-shadow: 13px 11px 5px -4px #ffcc00;
   box-shadow: 13px 11px 5px -4px #ffcc00;
+  transition: 0.3s ease-in-out;
 }
 
 /* --------------- Pokemon Details ---------------*/
@@ -404,4 +405,19 @@ body::-webkit-scrollbar-thumb {
 #type-box .water {
   background-color: #6890f0;
   border-color: #445e9c;
+}
+
+/* --------------- Hide all UI --------------- */
+
+/* Class to hide all UI */
+.hidden-ui {
+  color: transparent;
+  background-color: transparent;
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  cursor: none;
 }
