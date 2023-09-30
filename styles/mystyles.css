@@ -175,7 +175,15 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* --------------- Abilities ---------------*/
-
+.ability-list {
+  border: 2px inset black;
+  border-radius: 6px;
+  padding: 4px;
+  color: #000;
+  display: inline-flex;
+  background-color: #0075be;
+  margin: 0 5px;
+}
 /* --------------- Stats ---------------*/
 
 /* Stats title */
