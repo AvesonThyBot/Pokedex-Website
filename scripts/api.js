@@ -71,6 +71,10 @@ function searchPokemon() {
       const weight = document.querySelector("#weight");
       weight.innerHTML = `<strong>Weight: </strong>${data.weight}kg`;
 
+      // Pokemon experience
+      const experience = document.querySelector("#experience");
+      experience.innerHTML = `<strong>Base Experience: </strong>${data.base_experience} XP`;
+
       // pokemon types
       const types = document.querySelector("#type-box");
       for (let index = 0; index < data.types.length; index++) {
