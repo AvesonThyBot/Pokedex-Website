@@ -73,6 +73,7 @@ function searchPokemon() {
         stats.innerHTML += `<div class="stats-name">${name}</div><div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 20px">
           <div class="progress-bar ${extraClass} progress-text progress-bar-striped progress-bar-animated" style="width: ${percentage}%">${data.stats[index].base_stat}</div>
         </div>`;
+        search.placeholder = `${data.name}`;
         search.value = "";
       }
     });
