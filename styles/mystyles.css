@@ -127,7 +127,7 @@ body::-webkit-scrollbar-thumb {
 .pokemon-image {
   position: absolute;
   right: -50px;
-  top: -20px;
+  top: -10px;
   padding: 0;
   width: 150px;
   z-index: 1;
@@ -169,6 +169,12 @@ body::-webkit-scrollbar-thumb {
   border-radius: 6px;
   padding: 3px;
   color: #fff;
+  display: inline-flex;
+  margin: 0 5px;
+}
+
+.type:first-child {
+  margin-left: 0px;
 }
 
 /* Bug */

@@ -1,11 +1,13 @@
 // DOM variables
 const btnSearch = document.getElementById("btn-search");
+const search = document.getElementById("search");
 
-btnSearch.addEventListener("click", () => {
-  let pokemon = document.getElementById("search").value;
+// Find pokemon function
+
+function searchPokemon() {
+  let pokemon = search.value;
   let url = `https://pokeapi.co/api/v2/pokemon/${pokemon.toLowerCase()}`;
 
-  // Gets data and puts in console
   fetch(url)
     .then((data) => data.json())
     .then((data) => {
@@ -74,6 +76,15 @@ btnSearch.addEventListener("click", () => {
         console.log(name, extraClass);
       }
     });
-});
+}
 
-// HP, ATTACK, SPECIAL ATTACK, SPECIAL DEFENSE, SPEED
+// Click to search
+btnSearch.addEventListener("click", searchPokemon);
+
+// press enter to search
+search.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    searchPokemon();
+  }
+});
