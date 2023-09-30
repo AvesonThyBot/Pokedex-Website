@@ -174,8 +174,10 @@ body::-webkit-scrollbar-thumb {
   -webkit-user-drag: none;
 }
 
-/* --------------- Abilities ---------------*/
-.ability-list {
+/* --------------- Abilities & move list & item list---------------*/
+.ability-list,
+.item-list,
+.move-list {
   border: 2px inset black;
   border-radius: 6px;
   padding: 4px;
@@ -184,8 +186,26 @@ body::-webkit-scrollbar-thumb {
   background-color: #0075be;
   margin: 0 5px;
 }
+
+.item-list {
+  background-color: #d5a100;
+}
+
+.move-list {
+  background-color: #ffcc00;
+}
+
+.scrollable-container {
+  width: 100%;
+  overflow-y: auto;
+}
+
 #ability-row span {
   padding: 10px 5px;
+}
+
+.move-list {
+  margin-top: 5px;
 }
 /* --------------- Stats ---------------*/
 

@@ -78,20 +78,23 @@ function searchPokemon() {
         types.innerHTML += `<span class="${data.types[index].type.name} type">${filterText(data.types[index].type.name)}</span>`;
       }
 
-      // ---------------------- Abilties & handHeld row ----------------------
+      // ---------------------- Abilties & handHeld & moves row ----------------------
+      // Ability
       const ability = document.querySelector("#ability");
       ability.innerHTML = `<strong>Ability: </strong>`;
       for (let index = 0; index < data.abilities.length; index++) {
         ability.innerHTML += `<div class="ability-list ${data.abilities[index].ability.name}">${filterText(data.abilities[index].ability.name)}</div>`;
       }
 
+      // Hand held
       const handHeld = document.querySelector("#hand-held");
       handHeld.innerHTML = `<strong>Held Items: </strong>`;
       for (let index = 0; index < data.held_items.length; index++) {
         handHeld.innerHTML += `<div class="item-list ${data.held_items[index].item.name}">${filterText(data.held_items[index].item.name)}</div>`;
       }
 
-      const moves = document.querySelector("#moves");
+      // Moves
+      const moves = document.querySelector(".moves");
       moves.innerHTML = `<strong>Moves: </strong>`;
       for (let index = 0; index < data.moves.length; index++) {
         moves.innerHTML += `<div class="move-list ${data.moves[index].move.name}">${filterText(data.moves[index].move.name)}</div>`;
@@ -143,6 +146,9 @@ function searchPokemon() {
       console.log(`Error: ${error.message}`);
     });
 }
+
+// Moves function to make it easier to read
+function movesModal() {}
 
 // Filter text (only use for word without letters)
 function filterText(string) {
