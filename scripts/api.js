@@ -30,6 +30,8 @@ function popupModal(message) {
 // Find pokemon function
 function searchPokemon() {
   let pokemon = search.value;
+  pokemon = pokemon.replace(/^\s+|\s+$/g, "");
+  console.log(pokemon);
   let url = `https://pokeapi.co/api/v2/pokemon/${pokemon.toLowerCase()}`;
 
   fetch(url)
@@ -126,7 +128,7 @@ function searchPokemon() {
       for (let index = 0; index < data.stats.length; index++) {
         // Makes a progress bar with stats
         let name = data.stats[index].stat.name.toUpperCase();
-        let percentage = (data.stats[index].base_stat / 450) * 100;
+        let percentage = (data.stats[index].base_stat / 255) * 100;
         // change stats progressbar colour
         // change stats progressbar colour
         let extraClass = "bg-success";
