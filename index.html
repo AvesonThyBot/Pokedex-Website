@@ -89,18 +89,20 @@
     <!-- Moves Modal -->
     <div class="modal" id="movesPopup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="moves-content">
-          <div class="moves-header">
-            <h1 class="moves-title fs-5" id="exampleModalLabel">title goes here</h1>
+        <div class="modal-content" id="moves-content">
+          <div class="modal-header" id="moves-header">
+            <h1 class="modal-title fs-5" id="moves-title">title goes here</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="moves-body"></div>
-          <div class="moves-footer">
+          <div class="modal-body" id="moves-body"></div>
+          <div class="modal-footer" id="moves-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
     </div>
+
+    <button type="button" class="more-btn" data-bs-toggle="modal" data-bs-target="#movesPopup">View all moves</button>
 
     <!-- Scripts -->
     <script src="/scripts/api.js"></script>

@@ -118,30 +118,6 @@ body::-webkit-scrollbar-thumb {
   border-top: 2px outset black;
 }
 
-/* --------------- Moves Modal ---------------*/
-
-.moves-content {
-  padding: 10px;
-  background-color: white;
-  border: 3px outset #ffcc00;
-  border-radius: 6px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  z-index: 2;
-  color: black;
-}
-
-.moves-header {
-  border-bottom: 2px outset black;
-}
-
-.moves-body {
-}
-.moves-footer {
-  border-top: 2px outset black;
-}
-
 /* --------------- Main components ---------------*/
 
 /* Container */

@@ -163,9 +163,9 @@ function movesModal(numberOfMoves, data, pokemon) {
     moves.innerHTML += `<button type="button" class="more-btn" data-bs-toggle="modal" data-bs-target="#movesPopup">
     View all moves
   </button>`;
-    const modalTitle = document.querySelector(".moves-title");
-    const modalBody = document.querySelector(".moves-body");
-    const modalFooter = document.querySelector(".moves-footer");
+    const modalTitle = document.querySelector("#moves-title");
+    const modalBody = document.querySelector("#moves-body");
+    const modalFooter = document.querySelector("#moves-footer");
 
     // Modal content
     modalTitle.innerHTML = `${filterText(pokemon)}'s Moves`;
