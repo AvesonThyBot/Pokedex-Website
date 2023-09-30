@@ -44,7 +44,7 @@ function searchPokemon() {
     .then((data) => {
       // Rest of your code for processing valid Pokemon data
 
-      // ---------------------- Top row ----------------------
+      // ---------------------- Pokemon details ----------------------
 
       //pokemon image
       const pokemonImage = document.querySelector(".pokemon-image");
@@ -76,6 +76,13 @@ function searchPokemon() {
       for (let index = 0; index < data.types.length; index++) {
         // Loop for all types to be displayed
         types.innerHTML += `<span class="${data.types[index].type.name} type">${data.types[index].type.name.toUpperCase()}</span>`;
+      }
+
+      // ---------------------- Abilties row ----------------------
+      const ability = document.querySelector("#ability");
+      ability.innerHTML = `<strong>Ability: </strong>`;
+      for (let index = 0; index < data.abilities.length; index++) {
+        ability.innerHTML += `<div class="ability-list ${data.abilities[index].ability.name}">${data.abilities[index].ability.name.toUpperCase()}</div>`;
       }
 
       // ---------------------- Stats row ----------------------
