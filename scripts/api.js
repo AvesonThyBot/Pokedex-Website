@@ -94,7 +94,11 @@ function searchPokemon() {
       const handHeld = document.querySelector("#hand-held");
       handHeld.innerHTML = `<strong>Held Items: </strong>`;
       for (let index = 0; index < data.held_items.length; index++) {
-        handHeld.innerHTML += `<div class="item-list ${data.held_items[index].item.name}">${filterText(data.held_items[index].item.name)}</div>`;
+        handHeld.innerHTML += `<div class="item-list">${filterText(data.held_items[index].item.name)}</div>`;
+      }
+      // Displays no items if theres no items
+      if (document.querySelectorAll(".item-list").length === 0) {
+        handHeld.innerHTML += `<div class="item-list">No Items.</div>`;
       }
 
       // Moves (function to show modal button or not)
@@ -162,7 +166,7 @@ function movesModal(numberOfMoves, data, pokemon) {
     moves.innerHTML = `<strong>Moves: </strong>`;
     // Prints 10 moves and a button
     for (let index = 0; index < 10; index++) {
-      moves.innerHTML += `<div class="move-list ${data.moves[index].move.name}">${filterText(data.moves[index].move.name)}</div>`;
+      moves.innerHTML += `<div class="move-list">${filterText(data.moves[index].move.name)}</div>`;
     }
     moves.innerHTML += `<button type="button" class="more-btn" data-bs-toggle="modal" data-bs-target="#movesPopup">
     View all moves
