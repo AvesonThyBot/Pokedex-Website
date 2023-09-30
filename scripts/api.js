@@ -57,7 +57,7 @@ function searchPokemon() {
 
       // Pokemon name
       const pokemonName = document.querySelector("#name");
-      pokemonName.innerHTML = `<strong>Name:</strong> ${data.name.toUpperCase()}`;
+      pokemonName.innerHTML = `<strong>Name:</strong> ${filterText(data.name)}`;
 
       // Pokemon id
       const id = document.querySelector("#id");
@@ -75,14 +75,14 @@ function searchPokemon() {
       const types = document.querySelector("#type-box");
       for (let index = 0; index < data.types.length; index++) {
         // Loop for all types to be displayed
-        types.innerHTML += `<span class="${data.types[index].type.name} type">${data.types[index].type.name.toUpperCase()}</span>`;
+        types.innerHTML += `<span class="${data.types[index].type.name} type">${filterText(data.types[index].type.name)}</span>`;
       }
 
       // ---------------------- Abilties row ----------------------
       const ability = document.querySelector("#ability");
       ability.innerHTML = `<strong>Ability: </strong>`;
       for (let index = 0; index < data.abilities.length; index++) {
-        ability.innerHTML += `<div class="ability-list ${data.abilities[index].ability.name}">${data.abilities[index].ability.name.toUpperCase()}</div>`;
+        ability.innerHTML += `<div class="ability-list ${data.abilities[index].ability.name}">${filterText(data.abilities[index].ability.name)}</div>`;
       }
 
       // ---------------------- Stats row ----------------------
@@ -92,11 +92,11 @@ function searchPokemon() {
 
       // stats title
       const statsTitle = document.querySelector("#stats-title");
-      statsTitle.textContent = `${data.name.toUpperCase()}'s Statistics:`;
+      statsTitle.textContent = `${filterText(data.name)}'s Statistics:`;
       stats.innerHTML += `<hr class="hr">`;
       for (let index = 0; index < data.stats.length; index++) {
         // Makes a progress bar with stats
-        let name = data.stats[index].stat.name.toUpperCase();
+        let name = filterText(data.stats[index].stat.name);
         let percentage = (data.stats[index].base_stat / 450) * 100;
         // change stats progressbar colour
         // change stats progressbar colour
@@ -128,6 +128,20 @@ function searchPokemon() {
     .catch((error) => {
       console.log(`Error: ${error.message}`);
     });
+}
+
+// Filter text (only use for word without letters)
+function filterText(string) {
+  // Replace "-" with space
+  let modifiedString = string.replace(/-/g, " ");
+
+  // Capitalize first letter of new word
+  modifiedString = modifiedString
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(" ");
+
+  return modifiedString;
 }
 
 // Click to search
