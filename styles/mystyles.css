@@ -134,21 +134,12 @@ body::-webkit-scrollbar-thumb {
 
 .moves-header {
   border-bottom: 2px outset black;
-  padding: 10px 0 0 0;
 }
-.btn-close {
-  position: relative;
-  right: -730px;
-  top: -30px;
-}
+
 .moves-body {
-  padding: 10px 0;
 }
 .moves-footer {
-  padding: 10px 0 0 0;
   border-top: 2px outset black;
-  display: flex;
-  align-items: end;
 }
 
 /* --------------- Main components ---------------*/
