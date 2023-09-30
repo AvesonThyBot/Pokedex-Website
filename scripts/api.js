@@ -20,7 +20,7 @@ function searchPokemon() {
       // Rest of your code for processing valid Pokemon data
 
       // ---------------------- Top row ----------------------
-      // Variables for pokemon data
+
       //pokemon image
       const pokemonImage = document.querySelector(".pokemon-image");
       if (data.sprites.front_default !== null) {
@@ -34,7 +34,26 @@ function searchPokemon() {
       const pokemonName = document.querySelector("#name");
       pokemonName.innerHTML = `<strong>Name:</strong> ${data.name.toUpperCase()}`;
 
-      // Rest of your code...
+      // Pokemon id
+      const id = document.querySelector("#id");
+      id.innerHTML = `<strong>ID:</strong> #${data.id}`;
+
+      // Pokemon height
+      const height = document.querySelector("#height");
+      height.innerHTML = `<strong>Height: </strong>${data.height}m`;
+
+      // Pokemon weight
+      const weight = document.querySelector("#weight");
+      weight.innerHTML = `<strong>Weight: </strong>${data.weight}kg`;
+
+      // pokemon types
+      const types = document.querySelector("#type-box");
+      for (let index = 0; index < data.types.length; index++) {
+        // Loop for all types to be displayed
+        types.innerHTML += `<span class="${
+          data.types[index].type.name
+        } type">${data.types[index].type.name.toUpperCase()}</span>`;
+      }
 
       // ---------------------- Stats row ----------------------
 
