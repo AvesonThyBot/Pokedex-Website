@@ -11,6 +11,7 @@ function searchPokemon() {
   fetch(url)
     .then((response) => {
       if (!response.ok) {
+        // Show popup that pokemon name/id is incorrect.
         throw new Error(`Pokemon not found: ${response.statusText}`);
       }
       return response.json();
