@@ -2,8 +2,32 @@
 const btnSearch = document.getElementById("btn-search");
 const search = document.getElementById("search");
 
-// Find pokemon function
+// Show popup modal
+function popupModal(message) {
+  // Modal variables
+  myModal = new bootstrap.Modal(document.getElementById("errorPopup"));
+  const modalBody = document.querySelector(".modal-body");
+  const modalTitle = document.querySelector(".modal-title");
+  const modalFooter = document.querySelector(".modal-footer");
 
+  // Modal content
+  modalTitle.innerHTML = "Invalid Search!";
+  modalBody.innerHTML = `<p>${message}</p>`;
+
+  // Show the modal
+  myModal.show();
+
+  // Listen for the hidden.bs.modal event
+  myModal._element.addEventListener("hidden.bs.modal", function () {
+    // Remove the modal-backdrop element
+    const backdrop = document.querySelector(".modal-backdrop");
+    if (backdrop) {
+      backdrop.remove();
+    }
+  });
+}
+
+// Find pokemon function
 function searchPokemon() {
   let pokemon = search.value;
   let url = `https://pokeapi.co/api/v2/pokemon/${pokemon.toLowerCase()}`;
@@ -11,7 +35,8 @@ function searchPokemon() {
   fetch(url)
     .then((response) => {
       if (!response.ok) {
-        // Show popup that pokemon name/id is incorrect.
+        // Show popup.
+        popupModal(`'${pokemon}' was not found.<br></br>Try again.`);
         throw new Error(`Pokemon not found: ${response.statusText}`);
       }
       return response.json();
@@ -50,9 +75,7 @@ function searchPokemon() {
       const types = document.querySelector("#type-box");
       for (let index = 0; index < data.types.length; index++) {
         // Loop for all types to be displayed
-        types.innerHTML += `<span class="${
-          data.types[index].type.name
-        } type">${data.types[index].type.name.toUpperCase()}</span>`;
+        types.innerHTML += `<span class="${data.types[index].type.name} type">${data.types[index].type.name.toUpperCase()}</span>`;
       }
 
       // ---------------------- Stats row ----------------------
