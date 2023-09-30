@@ -37,7 +37,7 @@ function searchPokemon() {
       if (!response.ok) {
         // Show popup.
         popupModal(`'${pokemon}' was not found.<br></br>Try again.`);
-        throw new Error(`Pokemon not found: ${response.statusText}`);
+        search.value = "";
       }
       return response.json();
     })
