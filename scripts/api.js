@@ -16,19 +16,19 @@ btnSearch.addEventListener("click",()=>{
 
         // Pokemon name
         const name = document.querySelector("#name");
-        name.textContent = `Name: ${data.name.toUpperCase()}`;
+        name.innerHTML = `<strong>Name:</strong> ${data.name.toUpperCase()}`;
 
         // Pokemon name
         const id = document.querySelector("#id");
-        id.textContent = `ID: #${data.id}`;
+        id.innerHTML = `<strong>ID:</strong> #${data.id}`;
         
         // Pokemon height
         const height = document.querySelector("#height");
-        height.textContent = `Height: ${data.height}m`
+        height.innerHTML = `<strong>Height: </strong>${data.height}m`
 
         // Pokemon weight
         const weight = document.querySelector("#weight");
-        weight.textContent = `Weight: ${data.weight}kg`
+        weight.innerHTML = `<strong>Weight: </strong>${data.weight}kg`
     
         // pokemon types
         const types = document.querySelector("#types");
