@@ -58,7 +58,7 @@
       <div class="row" id="ability-row">
         <span id="ability"></span>
         <span id="hand-held"></span>
-        <span class="moves scrollable-container"> </span>
+        <span class="moves"> </span>
       </div>
 
       <!-- Stats row -->
@@ -80,6 +80,22 @@
           </div>
           <div class="modal-body">text goes here</div>
           <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Moves Modal -->
+    <div class="modal" id="movesPopup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="moves-content">
+          <div class="moves-header">
+            <h1 class="moves-title fs-5" id="exampleModalLabel">title goes here</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="moves-body"></div>
+          <div class="moves-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           </div>
         </div>

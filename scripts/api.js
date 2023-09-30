@@ -93,12 +93,8 @@ function searchPokemon() {
         handHeld.innerHTML += `<div class="item-list ${data.held_items[index].item.name}">${filterText(data.held_items[index].item.name)}</div>`;
       }
 
-      // Moves
-      const moves = document.querySelector(".moves");
-      moves.innerHTML = `<strong>Moves: </strong>`;
-      for (let index = 0; index < data.moves.length; index++) {
-        moves.innerHTML += `<div class="move-list ${data.moves[index].move.name}">${filterText(data.moves[index].move.name)}</div>`;
-      }
+      // Moves (function to show modal button or not)
+      movesModal(data.moves.length, data, pokemon);
 
       // ---------------------- Stats row ----------------------
 
@@ -148,7 +144,36 @@ function searchPokemon() {
 }
 
 // Moves function to make it easier to read
-function movesModal() {}
+function movesModal(numberOfMoves, data, pokemon) {
+  // Modal variables
+  if (numberOfMoves <= 10) {
+    const moves = document.querySelector(".moves");
+    moves.innerHTML = `<strong>Moves: </strong>`;
+    // prints all the moves
+    for (let index = 0; index < data.moves.length; index++) {
+      moves.innerHTML += `<div class="move-list ${data.moves[index].move.name}">${filterText(data.moves[index].move.name)}</div>`;
+    }
+  } else {
+    const moves = document.querySelector(".moves");
+    moves.innerHTML = `<strong>Moves: </strong>`;
+    // Prints 10 moves and a button
+    for (let index = 0; index < 10; index++) {
+      moves.innerHTML += `<div class="move-list ${data.moves[index].move.name}">${filterText(data.moves[index].move.name)}</div>`;
+    }
+    moves.innerHTML += `<button type="button" class="more-btn" data-bs-toggle="modal" data-bs-target="#movesPopup">
+    View all moves
+  </button>`;
+    const modalTitle = document.querySelector(".moves-title");
+    const modalBody = document.querySelector(".moves-body");
+    const modalFooter = document.querySelector(".moves-footer");
+
+    // Modal content
+    modalTitle.innerHTML = `${filterText(pokemon)}'s Moves`;
+    for (let index = 0; index < data.moves.length; index++) {
+      modalBody.innerHTML += `<div class="move-list ${data.moves[index].move.name}">${filterText(data.moves[index].move.name)}</div>`;
+    }
+  }
+}
 
 // Filter text (only use for word without letters)
 function filterText(string) {
