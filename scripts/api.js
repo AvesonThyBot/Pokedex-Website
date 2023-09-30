@@ -9,37 +9,33 @@ function searchPokemon() {
   let url = `https://pokeapi.co/api/v2/pokemon/${pokemon.toLowerCase()}`;
 
   fetch(url)
-    .then((data) => data.json())
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Pokemon not found: ${response.statusText}`);
+      }
+      return response.json();
+    })
     .then((data) => {
+      // Rest of your code for processing valid Pokemon data
+
+      // ---------------------- Top row ----------------------
       // Variables for pokemon data
       //pokemon image
       const pokemonImage = document.querySelector(".pokemon-image");
-      pokemonImage.innerHTML = `<img src="${data.sprites.front_default}">`;
+      if (data.sprites.front_default !== null) {
+        pokemonImage.innerHTML = `<img src="${data.sprites.front_default}" alt="image of pokemon">`;
+      } else {
+        // If front_default is null, replace with pokeball
+        pokemonImage.innerHTML = `<img src="/images/pokeball.png" alt="pokemon image doesn't exist">`;
+      }
 
       // Pokemon name
       const pokemonName = document.querySelector("#name");
       pokemonName.innerHTML = `<strong>Name:</strong> ${data.name.toUpperCase()}`;
 
-      // Pokemon name
-      const id = document.querySelector("#id");
-      id.innerHTML = `<strong>ID:</strong> #${data.id}`;
+      // Rest of your code...
 
-      // Pokemon height
-      const height = document.querySelector("#height");
-      height.innerHTML = `<strong>Height: </strong>${data.height}m`;
-
-      // Pokemon weight
-      const weight = document.querySelector("#weight");
-      weight.innerHTML = `<strong>Weight: </strong>${data.weight}kg`;
-
-      // pokemon types
-      const types = document.querySelector("#type-box");
-      for (let index = 0; index < data.types.length; index++) {
-        // Loop for all types to be displayed
-        types.innerHTML += `<span class="${
-          data.types[index].type.name
-        } type">${data.types[index].type.name.toUpperCase()}</span>`;
-      }
+      // ---------------------- Stats row ----------------------
 
       // Display stats
       const stats = document.querySelector("#stats");
@@ -57,7 +53,9 @@ function searchPokemon() {
         let extraClass = "bg-success";
 
         // change extraclass based on name
-        if (name === "ATTACK") {
+        if (name === "HP") {
+          extraClass = "bg-success";
+        } else if (name === "ATTACK") {
           extraClass = "bg-danger";
         } else if (name === "SPECIAL-ATTACK") {
           extraClass = "bg-danger";
@@ -76,6 +74,9 @@ function searchPokemon() {
         search.placeholder = `${data.name}`;
         search.value = "";
       }
+    })
+    .catch((error) => {
+      console.log(`Error: ${error.message}`);
     });
 }
 
