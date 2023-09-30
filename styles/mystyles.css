@@ -162,3 +162,16 @@ body::-webkit-scrollbar-thumb {
     font-weight: bold;
     font-size: 16px;
 }
+
+/* --------------- Pokemon type --------------- */
+/* type design */
+.type{
+    border: 2px solid black;
+    border-radius: 6px;
+    padding: 3px;
+    color: #fff;
+}
+
+/* Bug	Dark	Dragon	Electric	Fighting	Fighting	Fire	Flying	Ghost
+Grass	Ground	Ice	Normal	Poison	Psychic	Rock	Steel	Water
+ */

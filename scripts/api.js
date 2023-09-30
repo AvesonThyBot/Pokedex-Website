@@ -15,8 +15,8 @@ btnSearch.addEventListener("click",()=>{
         pokemonImage.innerHTML = `<img src="${data.sprites.front_default}">`
 
         // Pokemon name
-        const name = document.querySelector("#name");
-        name.innerHTML = `<strong>Name:</strong> ${data.name.toUpperCase()}`;
+        const pokemonName = document.querySelector("#name");
+        pokemonName.innerHTML = `<strong>Name:</strong> ${data.name.toUpperCase()}`;
 
         // Pokemon name
         const id = document.querySelector("#id");
@@ -30,16 +30,20 @@ btnSearch.addEventListener("click",()=>{
         const weight = document.querySelector("#weight");
         weight.innerHTML = `<strong>Weight: </strong>${data.weight}kg`
     
+
         // pokemon types
-        const types = document.querySelector("#types");
-        
-        // Loop for all types to be displayed
-        for (let index = 0; index < data.types.length; index++) {
-          types.innerHTML += `<span class="${data.types[index].type.name}">${data.types[index].type.name.toUpperCase()}</span>`;
+        const types = document.querySelector("#type-box");
+        for (let index = 0; index < data.types.length; index++) { // Loop for all types to be displayed
+          types.innerHTML += `<span class="${data.types[index].type.name} type">${data.types[index].type.name.toUpperCase()}</span>`;
         }
         
+
         // Display stats
         const stats = document.querySelector("#stats");
+
+        // stats title
+        const statsTitle = document.querySelector("#stats-title");
+        statsTitle.textContent = `${data.name.toUpperCase()}'s Statistics:`
         stats.innerHTML += `<hr class="hr">`
         for (let index = 0; index < data.stats.length; index++) {
           // Makes a progress bar with stats
