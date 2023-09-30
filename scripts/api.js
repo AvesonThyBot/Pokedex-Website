@@ -91,6 +91,12 @@ function searchPokemon() {
         handHeld.innerHTML += `<div class="ability-list ${data.held_items[index].item.name}">${filterText(data.held_items[index].item.name)}</div>`;
       }
 
+      const moves = document.querySelector("#moves");
+      moves.innerHTML = `<strong>Moves: </strong>`;
+      for (let index = 0; index < data.moves.length; index++) {
+        moves.innerHTML += `<div class="ability-list ${data.moves[index].move.name}">${filterText(data.moves[index].move.name)}</div>`;
+      }
+
       // ---------------------- Stats row ----------------------
 
       // Display stats

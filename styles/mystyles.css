@@ -217,7 +217,7 @@ body::-webkit-scrollbar-thumb {
 
 /* --------------- Pokemon type --------------- */
 /* type design */
-.type {
+#type-box .type {
   border: 2px solid black;
   border-radius: 6px;
   padding: 4px;
@@ -226,114 +226,115 @@ body::-webkit-scrollbar-thumb {
   margin: 0 5px;
 }
 
-.type:first-child {
+#type-box .type:first-child {
   margin-left: 0px;
 }
 
 /* Bug */
-.bug {
+#type-box .bug {
   background-color: #a8b820;
   border-color: #5c5c3d;
 }
 
 /* Dark */
-.dark {
+#type-box .dark {
   background-color: #705848;
   border-color: #7d7d59;
 }
 
 /* Dragon */
-.dragon {
+#type-box .dragon {
   background-color: #7038f8;
   border-color: #000000;
 }
 
 /* Electric */
-.electric {
+#type-box .electric {
   background-color: #f8d030;
   border-color: #a1871f;
 }
 
 /* Fairy */
-.fairy {
+#type-box .fairy {
   background-color: #ee99ac;
   border-color: #9b6470;
 }
 
 /* Fighting */
-.fighting {
+#type-box .fighting {
   background-color: #c03028;
   border-color: #8e1600;
 }
 
 /* Fire */
-.fire {
+#type-box .fire {
   background-color: #f08030;
   border-color: #9c531f;
 }
 
 /* Flying */
-.flying {
+#type-box .flying {
   background-color: #a890f0;
   border-color: #6d5e9c;
 }
 
 /* Ghost */
-.ghost {
+#type-box .ghost {
   background-color: #705898;
   border-color: #493963;
 }
 
 /* Grass */
-.grass {
+#type-box .grass {
   background-color: #78c850;
   border-color: #4e8234;
 }
+#type-box 
 
 /* Ground */
-.ground {
+#type-box .ground {
   background-color: #e0c068;
   border-color: #927d44;
 }
 
 /* Ice */
-.ice {
+#type-box .ice {
   background-color: #98d8d8;
   border-color: #638d8d;
 }
 
 /* Normal */
-.normal {
+#type-box .normal {
   background-color: #a8a878;
   border-color: #6d6d4e;
 }
 
 /* Poison */
-.poison {
+#type-box .poison {
   background-color: #a040a0;
   border-color: #682a68;
 }
 
 /* Psychic */
-.psychic {
+#type-box .psychic {
   background-color: #f85888;
   border-color: #a13959;
 }
 
 /* Rock */
-.rock {
+#type-box .rock {
   background-color: #b8a038;
   border-color: #786824;
 }
 
 /* Steel */
-.steel {
+#type-box .steel {
   background-color: #b8b8d0;
   border-color: #787887;
 }
 
 /* Water */
-.water {
+#type-box .water {
   background-color: #6890f0;
   border-color: #445e9c;
 }
