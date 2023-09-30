@@ -193,6 +193,13 @@ body::-webkit-scrollbar-thumb {
   font-size: 24px;
 }
 
+.progress-bar {
+  border-radius: 6px;
+}
+
+.progress {
+  background-color: rgba(71, 71, 71, 0.2);
+}
 /* stats progress-bar text */
 .progress-text {
   font-weight: 650;
