@@ -211,7 +211,7 @@ function listPokemons() {
         pokemonID++;
 
         if (pokemonID <= 1017) {
-          setTimeout(fetchNextPokemon, 10); // 1 second delay
+          setTimeout(fetchNextPokemon, 10); // 10ms second delay
         }
       })
       // Extra error handling if data is corrupt
@@ -219,7 +219,7 @@ function listPokemons() {
         console.log(`Error fetching Pokemon ID ${pokemonID}: ${error.message}`);
         pokemonID++;
         if (pokemonID <= 1017) {
-          setTimeout(fetchNextPokemon, 1000); // 1 second delay
+          setTimeout(fetchNextPokemon, 10); // 10ms second delay
         }
       });
   }
