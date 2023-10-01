@@ -161,7 +161,7 @@ body::-webkit-scrollbar-thumb {
 
 /* design card for listing */
 .pokemon-card {
-  margin: 10px;
+  margin: 10px 35px;
   padding: 110px 80px;
   border-top-right-radius: 40px;
   border-bottom-left-radius: 40px;
@@ -198,6 +198,7 @@ body::-webkit-scrollbar-thumb {
 .pc-body {
   position: relative;
   border: 3px inset black;
+  border-radius: 50%;
   width: 180px;
   max-width: 300px;
   min-width: 100px;

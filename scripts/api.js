@@ -220,7 +220,18 @@ function listPokemons() {
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonID}`)
       .then((response) => response.json()) // <-- Call .json() here
       .then((data) => {
-        listingBody.innerHTML += `<span class="${data.types[0].type.name} pokemon-list">${filterText(data.name)}</span>`;
+        listingBody.innerHTML += `        <div class="pokemon-card ${data.types[0].type.name}">
+        <div class="pc-header">
+          <span class="pc-id"><p>#${data.id}</p></span>
+        </div>
+        <div class="pc-body">
+          <span class="pc-icon"><img src="${data.sprites.front_default}" alt="image of pokemon"/></span>
+        </div>
+        <span class="pc-name"><p>${filterText(data.name)}</p></span>
+        <span class="pc-type"><p>${filterText(data.types[0].type.name)}</p></span>
+        <span class="pc-view">View Pokemon</span>
+      </div>`;
+        // listingBody.innerHTML += `<span class="${data.types[0].type.name} pokemon-list">${filterText(data.name)}</span>`;
 
         // increment the id
         pokemonID++;
@@ -268,4 +279,4 @@ search.addEventListener("keydown", function (event) {
   }
 });
 
-// listPokemons();
+listPokemons();
