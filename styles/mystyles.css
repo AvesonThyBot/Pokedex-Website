@@ -176,6 +176,7 @@ body::-webkit-scrollbar-thumb {
   -moz-box-shadow: 8px 8px 5px -4px #ffcc00;
   box-shadow: 8px 8px 5px -4px #ffcc00;
   display: block;
+  user-select: none;
 }
 
 /* Pokemon card header*/
@@ -186,6 +187,8 @@ body::-webkit-scrollbar-thumb {
   background-color: #ffcc00;
   border: 3px inset black;
   border-radius: 18px 0 100px 0;
+  width: 50%;
+  padding-left: 10px;
 }
 
 /* Body */
@@ -205,7 +208,6 @@ body::-webkit-scrollbar-thumb {
 /* Body image */
 .pc-body img {
   width: 100%;
-  user-select: none;
   -webkit-user-drag: none;
 }
 
@@ -218,12 +220,30 @@ body::-webkit-scrollbar-thumb {
   flex-direction: column;
 }
 
-/* Footer spans */
+/* pokemon name */
+.pc-name {
+  text-align: center;
+  display: block;
+  position: relative;
+  left: 0px;
+  bottom: 40px;
+}
+/* pc name paragraph */
+.pc-name p {
+  font-size: 32px;
+  font-weight: 600;
+}
 
-.pc-footer span:nth-last-child(1) {
-  display: flex;
-  justify-content: center;
-  padding: 60px 0 0 0;
+/* pokemon type */
+.pc-type {
+  position: relative;
+  left: 70px;
+}
+/* Paragraph */
+.pc-type p {
+  color: #ffcc00;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 /* View pokemon button */
@@ -231,11 +251,12 @@ body::-webkit-scrollbar-thumb {
   margin: 0;
   position: relative;
   top: 60px;
-  left: 25px;
+  left: 30px;
   background-color: #ffcc00;
   padding: 10px;
   border: 3px outset #d5a100;
   border-radius: 6px;
+  cursor: pointer;
 }
 
 /* Bug */
