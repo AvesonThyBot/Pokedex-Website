@@ -1,6 +1,3 @@
-// Global variable to stop fetching
-let stopFetching = false;
-
 // DOM variables
 const btnSearch = document.getElementById("btn-search");
 const search = document.getElementById("search");
@@ -56,9 +53,6 @@ function searchPokemon() {
         // Add hidden-ui class
         const listingBody = document.querySelector(".pokemon-listing");
         listingBody.classList.add("hidden-ui");
-
-        // Stop the function
-        stopFetching = true;
       }
 
       // Pokemon image
