@@ -630,3 +630,19 @@ body::-webkit-scrollbar-thumb {
   -webkit-user-drag: none;
   cursor: none;
 }
+
+.hide-card {
+  color: transparent;
+  background-color: transparent;
+  opacity: 1;
+  pointer-events: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  cursor: none;
+  width: 0%;
+  height: 0%;
+  position: absolute;
+  top: -100000000000px;
+}
