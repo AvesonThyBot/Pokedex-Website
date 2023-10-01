@@ -189,6 +189,12 @@ body::-webkit-scrollbar-thumb {
   border-radius: 18px 0 100px 0;
   width: 50%;
   padding-left: 10px;
+  height: 10%;
+}
+/* header paragraph */
+.pc-header p {
+  font-size: 16px;
+  font-weight: 600;
 }
 
 /* Body */
@@ -209,15 +215,6 @@ body::-webkit-scrollbar-thumb {
 .pc-body img {
   width: 100%;
   -webkit-user-drag: none;
-}
-
-/* Footer */
-.pc-footer {
-  display: flex;
-  padding: 5px;
-  text-align: center;
-  position: relative;
-  flex-direction: column;
 }
 
 /* pokemon name */
