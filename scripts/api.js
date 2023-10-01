@@ -29,6 +29,7 @@ function popupModal(message) {
 
 // Find pokemon function
 function searchPokemon(cardPokemon) {
+  console.log(cardPokemon);
   if (cardPokemon !== 0) {
     pokemon = cardPokemon;
   } else {
@@ -235,9 +236,10 @@ search.addEventListener("keydown", function (event) {
 function viewPokemon(identity) {
   // Variables
   const pokemonCard = identity.closest(".pokemon-card");
-  const pcNameElement = pokemonCard.querySelector(".pc-name");
+  const pcNameElement = pokemonCard.querySelector(".pc-id");
   const pokemonName = pcNameElement.textContent.trim();
-  searchPokemon(pokemonName);
+  const pokemon = pokemonName.substring(1);
+  searchPokemon(pokemon);
 }
 
 // Archived the code for listing pokemon; due to lag and poor button hitbox for now
