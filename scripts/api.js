@@ -1,3 +1,6 @@
+// Global variable to stop fetching
+let stopFetching = false;
+
 // DOM variables
 const btnSearch = document.getElementById("btn-search");
 const search = document.getElementById("search");
@@ -43,15 +46,19 @@ function searchPokemon() {
       return response.json();
     })
     .then((data) => {
-      // Remove hidden-ui class
       if (pokemon.length > 0) {
+        // Remove hidden-ui class
         const unhideContainer = document.querySelector(".container");
         unhideContainer.querySelectorAll(".hidden-ui").forEach((hiddenDiv) => {
           hiddenDiv.classList.remove("hidden-ui");
         });
 
+        // Add hidden-ui class
         const listingBody = document.querySelector(".pokemon-listing");
         listingBody.classList.add("hidden-ui");
+
+        // Stop the function
+        stopFetching = true;
       }
 
       // Pokemon image
@@ -204,9 +211,14 @@ function listPokemons() {
   let pokemonID = 1;
 
   function fetchNextPokemon() {
+    // Check if we should stop fetching
+    if (stopFetching) {
+      return;
+    }
+
     // Fetch pokemon data
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonID}`)
-      .then((response) => response.json())
+      .then((response) => response.json()) // <-- Call .json() here
       .then((data) => {
         listingBody.innerHTML += `<span class="${data.types[0].type.name} pokemon-list">${filterText(data.name)}</span>`;
 
