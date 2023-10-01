@@ -268,4 +268,4 @@ search.addEventListener("keydown", function (event) {
   }
 });
 
-listPokemons();
+// listPokemons();
