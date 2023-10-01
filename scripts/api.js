@@ -56,7 +56,7 @@ function searchPokemon(cardPokemon) {
 
         // Add hidden-ui class
         const listingBody = document.querySelector(".pokemon-listing");
-        listingBody.classList.add("hidden-ui");
+        listingBody.classList.add("hide-card");
       }
 
       // Pokemon image
