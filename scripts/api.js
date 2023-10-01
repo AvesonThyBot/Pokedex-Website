@@ -223,8 +223,15 @@ search.addEventListener("keydown", function (event) {
 });
 
 // if view pokemon button is pressed
-function viewPokemon() {
-  console.log("test");
+function viewPokemon(identity) {
+  // find which button it is
+
+  // Variables
+  const button = identity.parentElement;
+
+  const pokemon = button.parentElement.;
+
+  searchPokemon(pokemon);
 }
 
 // Archived the code for listing pokemon; due to lag and poor button hitbox for now
