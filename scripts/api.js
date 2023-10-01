@@ -31,7 +31,6 @@ function popupModal(message) {
 function searchPokemon() {
   let pokemon = search.value;
   pokemon = pokemon.replace(/^\s+|\s+$/g, "");
-  console.log(pokemon);
   let url = `https://pokeapi.co/api/v2/pokemon/${pokemon.toLowerCase()}`;
 
   fetch(url)
@@ -196,6 +195,39 @@ function movesModal(numberOfMoves, data, pokemon) {
   }
 }
 
+// function to list all pokemons
+function listPokemons() {
+  const listingBody = document.querySelector(".listing-body");
+  let pokemonID = 1;
+
+  function fetchNextPokemon() {
+    // Fetch pokemon data
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonID}`)
+      .then((response) => response.json())
+      .then((data) => {
+        listingBody.innerHTML += `<span class="${data.types[0].type.name} pokemon-list">${filterText(data.name)}</span>`;
+
+        // increment the id
+        pokemonID++;
+
+        if (pokemonID <= 1017) {
+          setTimeout(fetchNextPokemon, 10); // 1 second delay
+        }
+      })
+      // Extra error handling if data is corrupt
+      .catch((error) => {
+        console.log(`Error fetching Pokemon ID ${pokemonID}: ${error.message}`);
+        pokemonID++;
+        if (pokemonID <= 1017) {
+          setTimeout(fetchNextPokemon, 1000); // 1 second delay
+        }
+      });
+  }
+
+  // fetch pokemons 1 by 1
+  fetchNextPokemon();
+}
+
 // Filter text (only use for word without letters)
 function filterText(string) {
   // Replace "-" with space
@@ -220,3 +252,5 @@ search.addEventListener("keydown", function (event) {
     searchPokemon();
   }
 });
+
+listPokemons();
