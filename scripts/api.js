@@ -28,11 +28,14 @@ function popupModal(message) {
 }
 
 // Find pokemon function
-function searchPokemon() {
-  let pokemon = search.value;
+function searchPokemon(cardPokemon) {
+  if (cardPokemon !== 0) {
+    pokemon = cardPokemon;
+  } else {
+    pokemon = search.value;
+  }
   pokemon = pokemon.replace(/^\s+|\s+$/g, "");
   let url = `https://pokeapi.co/api/v2/pokemon/${pokemon.toLowerCase()}`;
-
   fetch(url)
     .then((response) => {
       if (!response.ok) {
@@ -224,14 +227,11 @@ search.addEventListener("keydown", function (event) {
 
 // if view pokemon button is pressed
 function viewPokemon(identity) {
-  // find which button it is
-
   // Variables
-  const button = identity.parentElement;
-
-  const pokemon = button.parentElement.;
-
-  searchPokemon(pokemon);
+  const pokemonCard = identity.closest(".pokemon-card");
+  const pcNameElement = pokemonCard.querySelector(".pc-name");
+  const pokemonName = pcNameElement.textContent.trim();
+  searchPokemon(pokemonName);
 }
 
 // Archived the code for listing pokemon; due to lag and poor button hitbox for now
