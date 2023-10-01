@@ -206,6 +206,7 @@ function movesModal(numberOfMoves, data, pokemon) {
 // function to list all pokemons
 function listPokemons() {
   const listingBody = document.querySelector(".listing-body");
+  listingBody.classList.remove("hidden-ui");
   let pokemonID = 1;
 
   function fetchNextPokemon() {
@@ -265,4 +266,4 @@ search.addEventListener("keydown", function (event) {
   }
 });
 
-// listPokemons();
+listPokemons();
