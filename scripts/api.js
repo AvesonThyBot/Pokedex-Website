@@ -160,9 +160,7 @@ function searchPokemon() {
         }
 
         // output the stats
-        stats.innerHTML += `<div class="stats-name">${filterText(
-          name
-        )}</div><div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 20px">
+        stats.innerHTML += `<div class="stats-name">${filterText(name)}</div><div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 20px">
           <div class="progress-bar ${extraClass} progress-text progress-bar-striped progress-bar-animated" style="width: ${percentage}%">${data.stats[index].base_stat}</div>
         </div>`;
         search.placeholder = `${filterText(data.name)}`;
@@ -220,14 +218,7 @@ function listPokemons() {
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonID}`)
       .then((response) => response.json()) // <-- Call .json() here
       .then((data) => {
-        listingBody.innerHTML += `        <div class="pokemon-card ${data.types[0].type.name}"><div class="pc-header"><span class="pc-id"><p>#${
-          data.id
-        }</p></span></div><div class="pc-body"><span class="pc-icon"><img src="${
-          data.sprites.front_default
-        }" alt="image of pokemon"/></span></div><span class="pc-name"><p>${filterText(data.name)}</p></span><span class="pc-type"><p>${filterText(
-          data.types[0].type.name
-        )}</p></span><span class="pc-view">View Pokemon</span></div>`;
-
+        listingBody.innerHTML += `<div class="pokemon-card ${data.types[0].type.name}"><div class="pc-header"><span class="pc-id"><p>#${data.id}</p></span></div><div class="pc-body"><span class="pc-icon"><img src="${data.sprites.front_default}" alt="image of pokemon"/></span></div><span class="pc-name"><p>${filterText(data.name)}</p></span><span class="pc-type"><p>${filterText(data.types[0].type.name)}</p></span><span class="pc-view">View Pokemon</span></div>`;
         // increment the id
         pokemonID++;
 
@@ -274,4 +265,4 @@ search.addEventListener("keydown", function (event) {
   }
 });
 
-listPokemons();
+// listPokemons();
