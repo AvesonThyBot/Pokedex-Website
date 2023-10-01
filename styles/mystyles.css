@@ -163,7 +163,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* design card for listing */
-.pokemon-list {
+.pokemon-card {
   margin: 10px;
   padding: 110px 80px;
   border-top-right-radius: 40px;
@@ -175,7 +175,10 @@ body::-webkit-scrollbar-thumb {
   -webkit-box-shadow: 8px 8px 5px -4px #ffcc00;
   -moz-box-shadow: 8px 8px 5px -4px #ffcc00;
   box-shadow: 8px 8px 5px -4px #ffcc00;
+  display: block;
 }
+
+/* Pokemon card */
 
 /* type design */
 /* Bug */
