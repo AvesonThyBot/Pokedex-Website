@@ -142,6 +142,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* --------------- Pokemon listing ---------------*/
+/* Container body */
 .listing-body {
   background-color: white;
   border: 3px outset #ffcc00;
@@ -161,121 +162,109 @@ body::-webkit-scrollbar-thumb {
   padding: 20px 0;
 }
 
+/* design card for listing */
 .pokemon-list {
   margin: 10px;
-  padding: 10px;
-  border-radius: 6px;
-  border: 3px solid black;
-  background-color: blue;
+  padding: 110px 80px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 10%;
+  border-top-left-radius: 5px;
+  border: 3px outset black;
+  background-color: transparent;
+  -webkit-box-shadow: 8px 8px 5px -4px #ffcc00;
+  -moz-box-shadow: 8px 8px 5px -4px #ffcc00;
+  box-shadow: 8px 8px 5px -4px #ffcc00;
 }
 
-/* --------------- Pokemon listing design --------------- */
 /* type design */
 /* Bug */
 .listing-body .bug {
-  background-color: #a8b820;
   border-color: #5c5c3d;
 }
 
 /* Dark */
 .listing-body .dark {
-  background-color: #705848;
   border-color: #7d7d59;
 }
 
 /* Dragon */
 .listing-body .dragon {
-  background-color: #7038f8;
   border-color: #000000;
 }
 
 /* Electric */
 .listing-body .electric {
-  background-color: #f8d030;
   border-color: #a1871f;
 }
 
 /* Fairy */
 .listing-body .fairy {
-  background-color: #ee99ac;
   border-color: #9b6470;
 }
 
 /* Fighting */
 .listing-body .fighting {
-  background-color: #c03028;
   border-color: #8e1600;
 }
 
 /* Fire */
 .listing-body .fire {
-  background-color: #f08030;
   border-color: #9c531f;
 }
 
 /* Flying */
 .listing-body .flying {
-  background-color: #a890f0;
   border-color: #6d5e9c;
 }
 
 /* Ghost */
 .listing-body .ghost {
-  background-color: #705898;
   border-color: #493963;
 }
 
 /* Grass */
 .listing-body .grass {
-  background-color: #78c850;
   border-color: #4e8234;
 }
 
 /* Ground */
 .listing-body .ground {
-  background-color: #e0c068;
   border-color: #927d44;
 }
 
 /* Ice */
 .listing-body .ice {
-  background-color: #98d8d8;
   border-color: #638d8d;
 }
 
 /* Normal */
 .listing-body .normal {
-  background-color: #a8a878;
   border-color: #6d6d4e;
 }
 
 /* Poison */
 .listing-body .poison {
-  background-color: #a040a0;
   border-color: #682a68;
 }
 
 /* Psychic */
 .listing-body .psychic {
-  background-color: #f85888;
   border-color: #a13959;
 }
 
 /* Rock */
 .listing-body .rock {
-  background-color: #b8a038;
   border-color: #786824;
 }
 
 /* Steel */
 .listing-body .steel {
-  background-color: #b8b8d0;
   border-color: #787887;
 }
 
 /* Water */
 .listing-body .water {
-  background-color: #6890f0;
   border-color: #445e9c;
 }
 
