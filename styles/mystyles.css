@@ -109,7 +109,7 @@ body::-webkit-scrollbar-thumb {
   transition: 0.3s ease;
 }
 
-/* --------------- Error Modal ---------------*/
+/* --------------- Modals Styling ---------------*/
 .modal-content {
   background-color: white;
   border: 3px outset #ffcc00;
@@ -119,6 +119,9 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
   z-index: 2;
   color: black;
+  -webkit-box-shadow: 13px 11px 5px -4px #ffcc00;
+  -moz-box-shadow: 13px 11px 5px -4px #ffcc00;
+  box-shadow: 13px 11px 5px -4px #ffcc00;
 }
 /* modal header and footer */
 .modal-header {
