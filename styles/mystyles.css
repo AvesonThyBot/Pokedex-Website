@@ -178,7 +178,7 @@ body::-webkit-scrollbar-thumb {
   display: block;
   user-select: none;
   width: 20%;
-  box-sizing: border-box; /
+  box-sizing: border-box;
 }
 
 /* Pokemon card header*/
@@ -381,10 +381,11 @@ body::-webkit-scrollbar-thumb {
 
 /* --------------- Pokemon Details ---------------*/
 
-#top-row span {
-  user-select: none;
-  pointer-events: none;
-  -webkit-user-drag: none;
+#name,
+#id {
+  user-select: text;
+  pointer-events: all;
+  -webkit-user-drag: all;
 }
 
 #type-box,
@@ -503,6 +504,7 @@ body::-webkit-scrollbar-thumb {
   color: #000;
   display: inline-flex;
   margin: 0 5px;
+  transition: color 0.3s ease;
 }
 
 #type-box .type:first-child {
