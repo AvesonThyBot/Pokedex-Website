@@ -49,6 +49,9 @@ function searchPokemon() {
         unhideContainer.querySelectorAll(".hidden-ui").forEach((hiddenDiv) => {
           hiddenDiv.classList.remove("hidden-ui");
         });
+
+        const listingBody = document.querySelector(".pokemon-listing");
+        listingBody.classList.add("hidden-ui");
       }
 
       // Pokemon image
