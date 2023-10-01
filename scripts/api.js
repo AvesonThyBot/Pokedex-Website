@@ -55,7 +55,7 @@ function searchPokemon(cardPokemon) {
 
         // Add hidden-ui class
         const listingBody = document.querySelector(".pokemon-listing");
-        listingBody.classList.add("hide-card");
+        listingBody.classList.add("hidden-ui");
       }
 
       // Pokemon image
@@ -163,6 +163,12 @@ function searchPokemon(cardPokemon) {
         search.placeholder = `${filterText(data.name)}`;
         search.value = "";
       }
+
+      // Scroll to top of page
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
     })
     .catch((error) => {
       console.log(`Error: ${error.message}`);
