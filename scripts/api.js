@@ -29,8 +29,7 @@ function popupModal(message) {
 
 // Find pokemon function
 function searchPokemon(cardPokemon) {
-  console.log(cardPokemon);
-  if (cardPokemon !== 0) {
+  if (cardPokemon > 0) {
     pokemon = cardPokemon;
   } else {
     pokemon = search.value;
