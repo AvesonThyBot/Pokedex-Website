@@ -157,6 +157,9 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   flex-wrap: wrap;
   padding: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 /* design card for listing */
@@ -174,6 +177,8 @@ body::-webkit-scrollbar-thumb {
   box-shadow: 8px 8px 5px -4px #ffcc00;
   display: block;
   user-select: none;
+  width: 20%;
+  box-sizing: border-box; /
 }
 
 /* Pokemon card header*/
