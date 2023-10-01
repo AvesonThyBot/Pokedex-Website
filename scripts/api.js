@@ -172,41 +172,11 @@ function searchPokemon() {
     });
 }
 
-// Moves function to make it easier to read
-function movesModal(numberOfMoves, data, pokemon) {
-  // Modal variables
-  if (numberOfMoves <= 10) {
-    const moves = document.querySelector(".moves");
-    moves.innerHTML = `<strong>Moves: </strong>`;
-    // prints all the moves
-    for (let index = 0; index < data.moves.length; index++) {
-      moves.innerHTML += `<div class="move-list ${data.moves[index].move.name}">${filterText(data.moves[index].move.name)}</div>`;
-    }
-  } else {
-    const moves = document.querySelector(".moves");
-    moves.innerHTML = `<strong>Moves: </strong>`;
-    // Prints 10 moves and a button
-    for (let index = 0; index < 10; index++) {
-      moves.innerHTML += `<div class="move-list">${filterText(data.moves[index].move.name)}</div>`;
-    }
-    moves.innerHTML += `<button type="button" class="more-btn" data-bs-toggle="modal" data-bs-target="#movesPopup">
-    View all moves
-  </button>`;
-    const modalTitle = document.querySelector("#moves-title");
-    const modalBody = document.querySelector("#moves-body");
-
-    // Modal content
-    modalTitle.innerHTML = `${filterText(pokemon)}'s Moves`;
-    for (let index = 0; index < data.moves.length; index++) {
-      modalBody.innerHTML += `<div class="move-list ${data.moves[index].move.name}">${filterText(data.moves[index].move.name)}</div>`;
-    }
-  }
-}
-
 // function to list all pokemons
 function listPokemons() {
   const listingBody = document.querySelector(".listing-body");
   listingBody.classList.remove("hidden-ui");
+
   let pokemonID = 1;
 
   function fetchNextPokemon() {
@@ -217,14 +187,33 @@ function listPokemons() {
 
     // Fetch pokemon data
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonID}`)
-      .then((response) => response.json()) // <-- Call .json() here
+      .then((response) => response.json())
       .then((data) => {
-        listingBody.innerHTML += `<div class="pokemon-card ${data.types[0].type.name}"><div class="pc-header"><span class="pc-id"><p>#${data.id}</p></span></div><div class="pc-body"><span class="pc-icon"><img src="${data.sprites.front_default}" alt="image of pokemon"/></span></div><span class="pc-name"><p>${filterText(data.name)}</p></span><span class="pc-type"><p>${filterText(data.types[0].type.name)}</p></span><span class="pc-view">View Pokemon</span></div>`;
+        let pokemonImage;
+        if (data.sprites.front_default !== null) {
+          pokemonImage = data.sprites.front_default;
+        } else {
+          // If front_default is null, replace with pokeball
+          pokemonImage == "/images/pokeball.png";
+        }
+
+        listingBody.innerHTML += `<div class="pokemon-card ${data.types[0].type.name}">
+          <div class="pc-header">
+            <span class="pc-id"><p>#${data.id}</p></span>
+          </div>
+          <div class="pc-body">
+            <span class="pc-icon"><img src="${pokemonImage}" alt="image of pokemon"/></span>
+          </div>
+          <span class="pc-name"><p>${filterText(data.name)}</p></span>
+          <span class="pc-type"><p>${filterText(data.types[0].type.name)}</p></span>
+          <button type="button" class="pc-view" onclick="viewPokemon()">View Pokemon</button>
+        </div>`;
+
         // increment the id
         pokemonID++;
 
         if (pokemonID <= 1017) {
-          setTimeout(fetchNextPokemon, 10); // 10ms second delay
+          fetchNextPokemon();
         }
       })
       // Extra error handling if data is corrupt
@@ -232,7 +221,7 @@ function listPokemons() {
         console.log(`Error fetching Pokemon ID ${pokemonID}: ${error.message}`);
         pokemonID++;
         if (pokemonID <= 1017) {
-          setTimeout(fetchNextPokemon, 10); // 10ms second delay
+          fetchNextPokemon();
         }
       });
   }
@@ -266,4 +255,10 @@ search.addEventListener("keydown", function (event) {
   }
 });
 
-listPokemons();
+// if view pokemon button is pressed
+function viewPokemon() {
+  console.log("test");
+}
+
+// Archived the code; due to lag and poor button hitbox for now
+// listPokemons();
