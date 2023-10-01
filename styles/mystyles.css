@@ -154,9 +154,6 @@ body::-webkit-scrollbar-thumb {
   width: 90%;
   z-index: 1;
   color: black;
-  -webkit-box-shadow: 13px 11px 5px -4px #ffcc00;
-  -moz-box-shadow: 13px 11px 5px -4px #ffcc00;
-  box-shadow: 13px 11px 5px -4px #ffcc00;
   display: flex;
   flex-wrap: wrap;
   padding: 20px 0;
