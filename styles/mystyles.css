@@ -178,9 +178,66 @@ body::-webkit-scrollbar-thumb {
   display: block;
 }
 
-/* Pokemon card */
+/* Pokemon card header*/
+.pc-header {
+  position: relative;
+  top: -113px;
+  right: 83px;
+  background-color: #ffcc00;
+  border: 3px inset black;
+  border-radius: 18px 0 100px 0;
+}
 
-/* type design */
+/* Body */
+.pc-body {
+  position: relative;
+  border: 3px inset black;
+  width: 180px;
+  max-width: 300px;
+  min-width: 100px;
+  top: -80px;
+  right: auto;
+  left: auto;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* Body image */
+.pc-body img {
+  width: 100%;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Footer */
+.pc-footer {
+  display: flex;
+  padding: 5px;
+  text-align: center;
+  position: relative;
+  flex-direction: column;
+}
+
+/* Footer spans */
+
+.pc-footer span:nth-last-child(1) {
+  display: flex;
+  justify-content: center;
+  padding: 60px 0 0 0;
+}
+
+/* View pokemon button */
+.pc-view {
+  margin: 0;
+  position: relative;
+  top: 60px;
+  left: 25px;
+  background-color: #ffcc00;
+  padding: 10px;
+  border: 3px outset #d5a100;
+  border-radius: 6px;
+}
+
 /* Bug */
 .listing-body .bug {
   border-color: #5c5c3d;
