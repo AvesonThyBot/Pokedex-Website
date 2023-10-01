@@ -227,5 +227,4 @@ function viewPokemon() {
   console.log("test");
 }
 
-// Archived the code; due to lag and poor button hitbox for now
-// listPokemons();
+// Archived the code for listing pokemon; due to lag and poor button hitbox for now
